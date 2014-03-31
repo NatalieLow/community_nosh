@@ -1,8 +1,12 @@
 class StaticPagesController < ApplicationController
   def home
+    logger.debug request.headers.inspect
+    logger.debug response.headers.inspect
+    @posts = Post.all.limit(4)
+
   end
 
-  def help
+  def demo
   end
 
   def about

@@ -18,10 +18,10 @@ describe "StaticPages" do
     it { should_not have_title('| Home')}
   end
 
-  describe "Help page" do
-    before {visit help_path}
-    let(:heading) {'Help'}
-    let(:page_title) {"Help"}
+  describe "Demo_Info page" do
+    before {visit demo_path}
+    let(:heading) {'Demo'}
+    let(:page_title) {"Demo"}
 
     it_should_behave_like "all static pages"
   end

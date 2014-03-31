@@ -1,15 +1,54 @@
 <div class="center hero-unit">
-  <h1>Welcome to the Sample App</h1>
+  <% @posts.each do |post| %>
+      <!--<div id="voting">-->
+        <!--<a>Fresh Nosh? <i class="glyphicon glyphicon-thumbs-up"></i>-->
+        <!--<i class="glyphicon glyphicon-thumbs-down"></i></a>-->
 
-  <h2>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
+      <!--</div>-->
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-medium btn-primary" %>
+      <div class="img_post">
+
+        <a href="<%= post.url %>"><div class="attach-post-image"
+            style="background-image:url('<%= post.img_url %>')">
+        </div></a>
+        <div id="post_info">
+          <div id="top_post_info">
+            <!--<tr>-->
+              <p id="up_down_votes">Fresh Nosh?
+                <a><i class="glyphicon glyphicon-thumbs-up"></i></a>
+                <a><i class="glyphicon glyphicon-thumbs-down"></i></a></p>
+              <a id="rating"><i class="glyphicon glyphicon-star-empty"></i>
+                <i class="glyphicon glyphicon-star-empty"></i>
+                <i class="glyphicon glyphicon-star-empty"></i></a>
+            <!--</tr>-->
+          </div>
+
+          <table id="bottom_post_info">
+            <tr>
+              <td id="review"><a>Discussion/ Reviews</a></td>
+              <td id="post_title"><%= post.title.upcase %>
+                <br/>from <%= post.blog_name.downcase %></td>
+              <td id="save"><a><i class="glyphicon glyphicon-plus"></i> Recipe Box</a></td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+  <% end %>
+
+
+  <!--<h1>Welcome to the Sample App</h1>-->
+
+  <!--<h2>-->
+    <!--This is the home page for the-->
+    <!--<a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>-->
+    <!--sample application.-->
+  <!--</h2>-->
+
+  <!--<%= link_to "Sign up now!", signup_path, class: "btn btn-medium btn-primary" %>-->
+
 </div>
-
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+<%= link_to image_tag("http://www.mothercoders.org/favicon.ico", alt: "Mother Coders"),
+            'http://www.mothercoders.org/give/' %>
 
 

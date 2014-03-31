@@ -17,7 +17,12 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  height: 100%;
+  font-family: "Andale Mono", AndaleMono, monospace;
+  letter-spacing: 0.5px;
+  padding-top: 6em;
+  color: white;
+  font-size: 16px;
 }
 
 section {
@@ -46,6 +51,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+
 }
 
 h2 {
@@ -54,45 +60,98 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: $grayMediumLight;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
-
-/* header */
-
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: $white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
+a {
+  color: white;
+  text-shadow: 1.5px 1.5px #444;
   &:hover {
-    color: $white;
+    color: #ddd;
     text-decoration: none;
   }
 }
+
+
+.not_white_text {
+  color:#888;
+
+  a{
+    color: #7df;
+    font-weight: bold;
+    text-shadow: .8px .8px #444;
+    &:hover {
+      color: #6ce;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* header */
+.navbar.navbar-inverse .nav > li > a {
+  color: white;
+}
+
+.navbar{
+  min-height: 40px;
+  .row{
+
+    #logo {
+      font-size: 28px;
+      font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      padding-right: 0;
+      &:hover {
+        color: white;
+        text-decoration: none;
+      }
+    }
+    #sign_in{
+      text-transform: uppercase;
+      padding-top: 10px;
+      a{
+        font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+      }
+    }
+  }
+
+  #tagline {
+    margin-bottom: .6em;
+    h1{
+      font-size: .9em;
+      margin: 0;
+
+      font-weight: 0;
+      letter-spacing: 0.5px;
+      text-align: left;
+      padding-left: 12%;
+    }
+  }
+}
+
 
 
 
 /* footer */
 
 footer {
+  clear: both;
+  position: relative;
+
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  color: $grayMediumLight;
   a {
-    color: $gray;
+    color: #999;
+    text-shadow: .1px .1px #444;
     &:hover {
-      color: $grayDarker;
+      color: $grayMediumLight;
     }
   }
   small {
@@ -116,6 +175,142 @@ footer {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+#voting{
+  float:left;
+  position: relative;
+  top: 30px;
+  left: -20px;
+  padding: 3px;
+  background: rgba(0, 0, 0, .8);
+  border: 1px solid #444;
+  border-radius: 5px;
+  a{
+    padding: 3px;
+
+  }
+}
+
+.img_post{
+  clear: both;
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  height: 425px;
+}
+
+.attach-post-image{
+  height: 425px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#review {
+  width:25%;
+  a {
+    font-size: 14px;
+    &:hover {
+      color: #ddd;
+      text-decoration: none;
+     }
+  }
+}
+#top_post_info {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin-top: 10px;
+  text-shadow: 1.5px 1.5px #444;
+
+  #up_down_votes {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    width: 35%;
+    background: rgba(0, 0, 0, .8);
+    border: 1.7px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    padding: 3px;
+    margin-left: 10px;
+    display: inline-block;
+    float: left;
+  }
+  #rating{
+    position: relative;
+    text-align: right;
+    padding-right: 25px;
+    padding-top: 13px;
+    display: inline-block;
+    float: right;
+  }
+}
+
+#bottom_post_info {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: rgba(150, 150, 170, .5);
+  text-shadow: 1.5px 1.5px #444;
+}
+
+#post_title {
+  width: 50%;
+  font-size: 18px;
+  padding: 8px;
+}
+
+#save {
+  width: 25%;
+  text-align: right;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+/* Contact */
+#contact_pic{
+  float: left;
+  width: 45%;
+  img{
+    border-radius: 500px;
+  }
+ p{
+   text-align: center;
+   font-size: 1em;
+ }
+}
+
+#contact_main{
+  width: 45%;
+  height: 536px;
+  float: right;
+}
+
+/* About */
+#about_wrap{
+
+  padding-bottom: 75px;
+  text-shadow: 1.5px 1.5px #333;
+}
+#about_img{
+  padding-top: 35px;
+  padding-bottom: 35px;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow:auto;
+  p{
+    position: relative;
+    left: 12.5%;
+    width: 75%;
+    text-align: center;
+  }
 }
 
 

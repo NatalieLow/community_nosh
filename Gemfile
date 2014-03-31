@@ -3,7 +3,7 @@ ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
-gem 'bootstrap-sass', '2.3.2.0'
+gem 'bootstrap-sass'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'pg', '0.15.1'
 gem 'ruby-readability','0.6.0'
@@ -21,6 +21,8 @@ group :test do
   gem 'factory_girl_rails', '4.2.1'
 end
 
+# Use Fast Image for obtaining image data (height x width)
+gem 'fastimage'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.1'

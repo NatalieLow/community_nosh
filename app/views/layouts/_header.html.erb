@@ -1,14 +1,27 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<nav class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "sample app", '#', id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home",   root_path %></li>
-          <li><%= link_to "Help",   help_path %></li>
-          <li><%= link_to "Sign in",'#' %></li>
-        </ul>
-      </nav>
+      <div class="row">
+        <div class="col-xs-10 col-md-10" id="logo">
+          <%= link_to "Community Nosh", root_path, id: "logo" %>
+        </div>
+        <div class="col-xs-2 col-md-2" id="sign_in">
+          <%= link_to "Sign in", '#'%>
+        </div>
+      </div>
+
+
+      <div class="row" id="tagline" >
+        <!--<div class="col-md-8" >-->
+          <h1>Community picks from the freshest in food blogging</h1>
+        <!--</div>-->
+        <!--<div class="col-md-4">-->
+          <!--<div class="pull-right">-->
+            <!--<%= link_to "Sign in",'#' %>-->
+          <!--</div>-->
+
+      </div>
     </div>
   </div>
-</header>
+</nav>
+
