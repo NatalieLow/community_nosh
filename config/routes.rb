@@ -1,4 +1,4 @@
-SampleApp::Application.routes.draw do
+CommunityNosh::Application.routes.draw do
   resources :users
   root 'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'
@@ -13,7 +13,7 @@ SampleApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  # Example of regular route:
+  # Example of resgular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

@@ -4,11 +4,11 @@
 
 $grayMediumLight: #eaeaea;
 
-@mixin box-sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+//@mixin box-sizing {
+//  -moz-box-sizing: border-box;
+//  -webkit-box-sizing: border-box;
+//  box-sizing: border-box;
+//}
 
 /* universal */
 
@@ -133,10 +133,6 @@ a {
     }
   }
 }
-
-
-
-
 /* footer */
 
 footer {
@@ -169,13 +165,13 @@ footer {
 
 /* miscellaneous */
 
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
+//.debug_dump {
+//  clear: both;
+//  float: left;
+//  width: 100%;
+//  margin-top: 45px;
+//  @include box_sizing;
+//}
 
 #voting{
   float:left;
@@ -233,7 +229,7 @@ footer {
     top: 5px;
     left: 5px;
     width: 35%;
-    background: rgba(0, 0, 0, .8);
+    background: rgba(15, 15, 0, .8);
     border: 1.7px solid #aaa;
     border-radius: 5px;
     text-align: center;

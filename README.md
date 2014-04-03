@@ -1,5 +1,5 @@
-# Ruby on Rails Tutorial: sample application
+# Community Nosh
 
-This it the sample application for
-the [*Ruby on Rails Tutorial*](http://railstutorial.org/)
-by [Michael Hartl](http://michaelhartl.com/).
+My passion for food and love of food blogs prompted me to create a space
+where all types of food enthusiasts can come together. The goal of this
+site is to offer food inspiration from the freshest in food blogging.
