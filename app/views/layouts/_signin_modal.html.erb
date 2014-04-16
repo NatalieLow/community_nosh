@@ -1,0 +1,29 @@
+<!-- Modal -->
+<div class="modal fade" id="sign_in_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for User.new do |f| %>
+
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+            </br>
+
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+       </div>
+            <div class="modal-footer">
+
+
+            <%= f.submit "Sign In", class: "btn btn-large btn-primary" %>
+        <% end %>
+
+        <p>Need an account? <%= link_to "Sign Up", new_user_path %></p>
+      </div>
+    </div>
+  </div>
+</div>

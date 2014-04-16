@@ -1,4 +1,4 @@
-<div class="center hero-unit">
+<div class="center hero-unit white_text">
   <% @posts.each do |post| %>
       <!--<div id="voting">-->
         <!--<a>Fresh Nosh? <i class="glyphicon glyphicon-thumbs-up"></i>-->
@@ -17,7 +17,7 @@
               <p id="up_down_votes">Fresh Nosh?
                 <a><i class="glyphicon glyphicon-thumbs-up"></i></a>
                 <a><i class="glyphicon glyphicon-thumbs-down"></i></a></p>
-              <a id="rating"><i class="glyphicon glyphicon-star-empty"></i>
+              <a   id="rating"><i class="glyphicon glyphicon-star-empty"></i>
                 <i class="glyphicon glyphicon-star-empty"></i>
                 <i class="glyphicon glyphicon-star-empty"></i></a>
             <!--</tr>-->
@@ -26,7 +26,7 @@
           <table id="bottom_post_info">
             <tr>
               <td id="review"><a>Discussion/ Reviews</a></td>
-              <td id="post_title"><%= post.title.upcase %>
+              <td id="post_title"><%= post.title.titlecase %>
                 <br/>from <%= post.blog_name.downcase %></td>
               <td id="save"><a><i class="glyphicon glyphicon-plus"></i> Recipe Box</a></td>
             </tr>
@@ -35,17 +35,6 @@
 
       </div>
   <% end %>
-
-
-  <!--<h1>Welcome to the Sample App</h1>-->
-
-  <!--<h2>-->
-    <!--This is the home page for the-->
-    <!--<a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>-->
-    <!--sample application.-->
-  <!--</h2>-->
-
-  <!--<%= link_to "Sign up now!", signup_path, class: "btn btn-medium btn-primary" %>-->
 
 </div>
 <%= link_to image_tag("http://www.mothercoders.org/favicon.ico", alt: "Mother Coders"),

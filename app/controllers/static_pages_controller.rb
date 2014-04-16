@@ -1,9 +1,7 @@
 class StaticPagesController < ApplicationController
-  def home
-    logger.debug request.headers.inspect
-    logger.debug response.headers.inspect
-    @posts = Post.limit(4).order("random()")
 
+  def home
+    @posts = Post.where.not(img_url: nil).limit(5).order("random()")
   end
 
   def demo
@@ -14,4 +12,5 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
 end

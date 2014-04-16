@@ -1,4 +1,7 @@
-<nav class="navbar navbar-fixed-top navbar-inverse">
+
+
+
+<nav class="navbar navbar-fixed-top navbar-inverse white_text">
   <div class="navbar-inner">
     <div class="container">
       <div class="row">
@@ -6,7 +9,8 @@
           <%= link_to "Community Nosh", root_path, id: "logo" %>
         </div>
         <div class="col-xs-2 col-md-2" id="sign_in">
-          <%= link_to "Sign in", '#'%>
+          <!--<%= link_to "Sign in", '#'%>-->
+          <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#sign_in_modal">Sign In</button>
         </div>
       </div>
 
