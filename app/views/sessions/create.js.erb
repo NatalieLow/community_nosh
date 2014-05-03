@@ -1,0 +1,9 @@
+
+<% if @error %>
+  $('#sign_in_modal .modal-body').prepend(
+    "<div class=\"alert alert-danger\"><%= @error %></div>"
+  )
+<% else %>
+  $('#sign_in_modal').modal('hide');
+  window.location = "/";
+<% end %>
