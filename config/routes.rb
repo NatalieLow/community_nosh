@@ -1,6 +1,8 @@
 CommunityNosh::Application.routes.draw do
+  match 'posts/:id', to: 'posts#show', via: 'get'
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :comments, only: [:new, :create, :destroy]
   root 'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'

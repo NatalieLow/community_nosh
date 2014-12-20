@@ -1,0 +1,28 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.commenting{
+  position: relative;
+  left: 12.5%;
+  value{
+    color: #aaa;
+
+  }
+  #comment_text{
+    width: 60%;
+    padding: 4px;
+    color: #aaa;
+
+  }
+  .primary_comment{
+    position: relative;
+    left: 3%;
+    margin: 6px;
+  }
+  .secondary_comment{
+    position: relative;
+    left: 3%;
+    margin: 6px;
+  }
+}

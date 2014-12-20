@@ -305,7 +305,6 @@ footer {
 .img_post{
   clear: both;
   position: relative;
-  margin-top: 25px;
   margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
@@ -348,9 +347,9 @@ footer {
     border-radius: 5px;
     text-align: center;
     padding: 3px;
-    margin-left: 10px;
+    margin-right: 10px;
     display: inline-block;
-    float: left;
+    float: right;
   }
   #rating{
     position: relative;
@@ -358,7 +357,7 @@ footer {
     padding-right: 25px;
     padding-top: 13px;
     display: inline-block;
-    float: right;
+    float: left;
   }
 }
 

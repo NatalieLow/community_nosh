@@ -49,27 +49,28 @@ task :scrape => :environment do
 
 
   Post.where("blog_name = 'not without salt'").each do |post|
-    #post.html = open(post.url).read
+    post.html = open(post.url).read
     css_img = Nokogiri::HTML(post.html).css('div.intro-text img').select{|img| img[:width].to_i > 200}
     if !css_img.nil?
-      first_image = css_img[0]
-      if !first_image.nil?
-        post.img_url = first_image['src']
+      last_image = css_img.last
+      if !last_image.nil?
+        post.img_url = last_image['src']
       end
     end
 
+
     recipe_title = Nokogiri::HTML(post.html).css('h2').text
 
-      unless recipe_title == ""
-        post.title = recipe_title
-        new_url = post.url + "#recipe"
-        post.url = new_url
-      end
+    unless recipe_title == ""
+      post.title = recipe_title
+      new_url = post.url + "#recipe" unless post.url.ends_with?('#recipe')
+      post.url = new_url
+    end
 
-      post.save
+    post.save
 
-      puts "Final post title: #{post.title}"
-      puts "Final post url: #{post.url}"
+    puts "Final post title: #{post.title}"
+    puts "Final post url: #{post.url}"
   end
 
 

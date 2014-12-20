@@ -1,0 +1,45 @@
+<div class="center hero-unit white_text">
+  <div class="img_post">
+    <a href="<%= @post.url %>" target="_blank"><div class="attach-post-image"
+                                                    style="background-image:url('<%= @post.img_url %>')"></div></a>
+    <table id="bottom_post_info">
+      <tr>
+        <td id="post_title"><%= @post.title.titlecase %>
+          <br/>from <%= @post.blog_name.downcase %></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<div class="commenting">
+  <%= form_for @post.comments.build, url: {controller: 'comments', action: "create"} do |f| %>
+    <%= f.hidden_field :post_id %>
+    <%= f.text_field :text, :value => "Any good gluten-free subs for the flour?"%>
+    <%= f.submit "Post Comment", class: "btn btn-large btn-primary" %>
+  <% end %>
+  <div class="comments"></div>
+  <% @post.comments.each do |comment| %>
+    <% if comment.comment_id.nil? && !comment.new_record? %>
+      <div class="primary_comment">
+        <%= comment.text %>      <button type="button" class="reply_button btn btn-large btn-primary">Reply</button>
+        <div class="hidden_form">
+          <%= form_for comment.comments.build(post_id: comment.post_id),
+                       url: {controller: 'comments', action: "create"} do |f| %>
+            <%= f.hidden_field :post_id %>
+            <%= f.hidden_field :comment_id %>
+            <%= f.text_field :text %>
+            <%= f.submit "Post Comment", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
+
+        <% comment.comments.each do |reply| %>
+          <div class="secondary_comment">
+            <%= reply.text %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
