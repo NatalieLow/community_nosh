@@ -13,10 +13,10 @@
 </div>
 
 <div class="commenting">
-  <%= form_for @post.comments.build, url: {controller: 'comments', action: "create"} do |f| %>
+  <%= form_for @post.comments.build, url: {controller: 'comments', action: "create"}, remote: true do |f| %>
     <%= f.hidden_field :post_id %>
     <%= f.text_field :text, :value => "Any good gluten-free subs for the flour?"%>
-    <%= f.submit "Post Comment", class: "btn btn-large btn-primary" %>
+    <%= f.submit "Post Comment", class: "comment_button btn btn-large btn-primary" %>
   <% end %>
   <div class="comments"></div>
   <% @post.comments.each do |comment| %>
@@ -25,11 +25,11 @@
         <%= comment.text %>      <button type="button" class="reply_button btn btn-large btn-primary">Reply</button>
         <div class="hidden_form">
           <%= form_for comment.comments.build(post_id: comment.post_id),
-                       url: {controller: 'comments', action: "create"} do |f| %>
+                       url: {controller: 'comments', action: "create"}, remote: true do |f| %>
             <%= f.hidden_field :post_id %>
             <%= f.hidden_field :comment_id %>
             <%= f.text_field :text %>
-            <%= f.submit "Post Comment", class: "btn btn-large btn-primary" %>
+            <%= f.submit "Post Comment", class: "comment_button btn btn-large btn-primary" %>
           <% end %>
         </div>
 

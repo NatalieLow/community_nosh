@@ -4,10 +4,5 @@ class Comment < ActiveRecord::Base
   belongs_to :comment
 
   has_many :comments
-
-  #before_create :logged_in_user
-  #
-  #def logged_in_user
-  #  unless current_user.nil?
-  #end
+  has_many :votes, :as => :votable
 end

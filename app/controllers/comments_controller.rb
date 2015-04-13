@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
         redirect_to controller: 'posts', action: 'show', id: comment_params[:post_id]
       else
         flash[:danger] = "Uh oh, comment didn't get saved. Please try again"
-        render controller: 'posts', action: 'show', id: comment_params[:post_id]
+        redirect_to controller: 'posts', action: 'show', id: comment_params[:post_id]
       end
     end
 

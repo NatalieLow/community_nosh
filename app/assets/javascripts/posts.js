@@ -12,4 +12,11 @@ $(document).ready(function(){
     $(".reply_button").click(function(){
         $(this).next().toggle();
     });
+
+
+    $('.comment_button').click(function(){
+        if(!(is_user)){
+            $('#sign_in_modal').modal('show');
+        }
+    });
 });

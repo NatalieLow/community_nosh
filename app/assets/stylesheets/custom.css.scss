@@ -84,11 +84,23 @@ a {
     color: white;
     text-shadow: 1.5px 1.5px #444;
     &:hover {
-      color: #ddd;
+      color: #7df;
       font-weight: lighter;
       text-decoration: none;
     }
   }
+
+  i{
+    &:hover {
+      color: #7df;
+      font-weight: lighter;
+      text-decoration: none;
+    }
+  }
+}
+
+.highlighted{
+  color: #7df;
 }
 
 /* forms */
@@ -324,7 +336,7 @@ footer {
   a {
     font-size: 14px;
     &:hover {
-      color: #ddd;
+      color: #7df;
       text-decoration: none;
      }
   }

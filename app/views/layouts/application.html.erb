@@ -10,6 +10,10 @@
       <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body>
+    <script type="text/javascript">
+      var is_user = <%= !current_user.try(:id).nil? %>
+    </script>
+
     <%= render 'layouts/header' %>
     <%= render 'sessions/sign_in_modal' %>
     <div class="container">
