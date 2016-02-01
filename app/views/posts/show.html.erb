@@ -15,7 +15,7 @@
 <div class="commenting">
   <%= form_for @post.comments.build, url: {controller: 'comments', action: "create"}, remote: true do |f| %>
     <%= f.hidden_field :post_id %>
-    <%= f.text_field :text, :value => "Any good gluten-free subs for the flour?"%>
+    <%= f.text_field :text, :placeholder => "Any good gluten-free subs for the flour?"%>
     <%= f.submit "Post Comment", class: "comment_button btn btn-large btn-primary" %>
   <% end %>
   <div class="comments"></div>

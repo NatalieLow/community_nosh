@@ -13,6 +13,11 @@ $(document).ready(function(){
         $(this).next().toggle();
     });
 
+//    $('input:text').focus(
+//        function(){
+//             $(this).val("");
+//        });
+
 
     $('.comment_button').click(function(){
         if(!(is_user)){
