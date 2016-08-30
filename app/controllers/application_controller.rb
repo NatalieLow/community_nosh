@@ -5,13 +5,11 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
 
-  before_action :set_current_user
+  private
 
-  def set_current_user
-    if session[:user_id]
-      @current_user = User.find(session[:user_id])
-    else
-      true
-    end
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+  helper_method :current_user
+
 end

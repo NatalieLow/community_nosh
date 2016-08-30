@@ -5,10 +5,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    session[:pre_login_page] = request.env['HTTP_REFERER']
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to the community #{@user.name.split(' ')[0].capitalize}!"
-      redirect_to @user
+      redirect_to session[:pre_login_page]
     else
       render 'new'
     end

@@ -1,35 +1,37 @@
 <div class="center hero-unit white_text">
   <% @posts.each do |post| %>
+    <div id = "welcome_user"></div>
 
+    <div  class="img_post">
+      <a href="<%= post.url %>" target="_blank"><div class="attach-post-image"
+                                                     style="background-image:url('<%= post.img_url %>')">
+      </div></a>
 
-      <div class="img_post">
+      <div id="top_post_info">
+        <!--<tr>-->
+        <p id="up_down_votes">Fresh Nosh?
+          <i class="glyphicon glyphicon-thumbs-down"></i>
+          <i class="glyphicon glyphicon-thumbs-up"></i></p>
+      </div>
 
-        <a href="<%= post.url %>" target="_blank"><div class="attach-post-image"
-            style="background-image:url('<%= post.img_url %>')">
-        </div></a>
-        <div id="post_info">
-          <div id="top_post_info">
-            <!--<tr>-->
-              <p id="up_down_votes">Fresh Nosh?
-                <i class="glyphicon glyphicon-thumbs-down"></i>
-                <i class="glyphicon glyphicon-thumbs-up"></i></p>
-              <!--<a   id="rating"><i class="glyphicon glyphicon-star-empty"></i>-->
-                <!--<i class="glyphicon glyphicon-star-empty"></i>-->
-                <!--<i class="glyphicon glyphicon-star-empty"></i></a>-->
-            <!--</tr>-->
-          </div>
-
-          <table id="bottom_post_info">
-            <tr>
-              <td id="review"><%=link_to 'Discussion/ Reviews', controller: 'posts', action: 'show', id: post.id %></td>
-              <td id="post_title"><%= post.title.titlecase %>
-                <br/>from <%= post.blog_name.downcase %></td>
-              <td id="save"><a><i class="glyphicon glyphicon-plus"></i> Recipe Box</a></td>
-            </tr>
-          </table>
-        </div>
+      <div id="bottom_post_info">
+        <table>
+          <tr>
+            <td id="review"><%=link_to 'Comments', controller: 'posts', action: 'show', id: post.id %></td>
+            <td id="post_title"><%= post.title.titlecase %>
+              <br/>from <%= post.blog_name.downcase %></td>
+            <td id="save"><a><i class="glyphicon glyphicon-plus"></i> Recipe Box</a></td>
+          </tr>
+        </table>
 
       </div>
+
+
+    </div>
+
+
+
+
   <% end %>
 
 </div>
